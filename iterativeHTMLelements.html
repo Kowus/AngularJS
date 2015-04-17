@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IterativeHTMLElements</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="">
+	<div ng-init="names=['Jai Prakash','Bharath','Charles','Swati']">
+	<p>Using Simple array</p>
+	<ul>
+		<li ng-repeat="name in names">{{name}}</li>
+	</ul>
+	</div>
+	<div ng-init="employees=[{name:'Abhinav',city:'Hyderabad'},{name:'Jai Prakash',city:'Bangalore'},{name:'Prabhu',city:'Pune'}]">
+	<p>Using Array of Objects</p>
+	<ul>
+		<li ng-repeat="person in employees">{{person.name + ',' +person.city}}</li>
+	</ul>
+</div>
+</div>
+</body>
+</html>
