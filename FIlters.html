@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS Filters</title>
+	<script type="text/javascript" src="JS/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myapp">
+		<p>First Name:<input type="text" ng-model="fname"></p>
+		<p>Last Name:<input type="text" ng-model="lname"></p>
+		<p>Salary:<input type="number" ng-model="salary"></p>
+		<br>
+		First Name :<h3>{{fname | uppercase}}</h3> Last Name : <h3>{{lname | lowercase}}</h3>
+		Salary:<h3>{{salary | currency}}</h3>
+		<div ng-controller="app_control">
+		Suggested Friends:
+			<ul>
+				<li ng-repeat="person in employees | orderBy:'city'">{{person.name + "," + person.city}}</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="JS/app_control1.js"></script>
+</body>
+</html>
