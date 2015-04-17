@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI Calculator</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="">
+	<p>Enter your Name: <input type="text" ng-model="name"></p>
+	<p>Enter your Height: <input type="text" ng-model="height" placeholder="Height in cm"></p>
+	<p>Enter your Weight: <input type="text" ng-model="weight" placeholder="Weight in kg"></p>
+	<br>
+	<p>{{name}} your Body Mass Index is {{(weight*100*100)/(height*height)}}</p>
+</div>
+</body>
+</html>
