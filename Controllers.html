@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Controllers In AngularJS</title>
+	<script type="text/javascript" src="JS/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="app_control">
+	<p>First Name:<input type="text" id="fname" ng-model="fname"></p>
+	<p>Last Name:<input type="text" id="lname" ng-model="lname"></p>
+	<br>
+	Full Name: <h3>{{fullname()}}</h3>
+</div>
+<script>
+	var app =  angular.module('myapp',[]);
+	app.controller('app_control', function($scope){
+		$scope.fname = document.getElementById('fname').value;
+		$scope.lname = document.getElementById('lname').value;
+		$scope.fullname = function(){
+			return $scope.fname + " " + $scope.lname;
+		};
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Controllers in Angular</title>
+	<script type="text/javascript" src="JS/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="app_control">
+	<ul>
+		<li ng-repeat="person in employees">{{person.name + " " + person.city}}</li>
+	</ul>
+	</div>
+	<script src="JS/app_control1.js"></script>
+</body>
+</html>
