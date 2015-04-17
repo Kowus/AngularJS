@@ -14,8 +14,9 @@
 		Salary:<h3>{{salary | currency}}</h3>
 		<div ng-controller="app_control">
 		Suggested Friends:
+		<p>Filter by City:<input type="text" ng-model="filterby"></p>
 			<ul>
-				<li ng-repeat="person in employees | orderBy:'city'">{{person.name + "," + person.city}}</li>
+				<li ng-repeat="person in employees | filter:filterby | orderBy:'city'">{{person.name + "," + person.city}}</li>
 			</ul>
 		</div>
 	</div>
