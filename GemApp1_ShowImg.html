@@ -1,0 +1,33 @@
+<!-- Use an Angular filter to display the price as a currency. -->
+<!-- We want to display the first full-sized image for each product. -->
+<!-- Make the li's repeat for each image in the image array. Use the variable image as your identifier. -->
+<!-- Use the ng-show directive to make sure our image gallery is only displayed if a product has images. -->
+
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="JS/angular.min.js"></script>
+    <script type="text/javascript" src="JS/gemApp1.js"></script>
+  </head>
+  <body ng-controller="StoreController as store">
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>
+          {{product.name}}
+          <em class="pull-right">{{product.price | currency}}</em>
+        </h3>
+
+        <!-- Image Gallery  -->
+        <div class="gallery" ng-show="{{product.images.length}}">
+          <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[0]}}" />
+          <ul class="clearfix">
+            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
