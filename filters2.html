@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="basic">
+<head>
+	<title>Simple Filters in AngularJS</title>
+	<script type="text/javascript" src="JS/angular.min.js"></script>
+	<script type="text/javascript" src="JS/demoapp.js"></script>
+</head>
+<body>
+<p>Date:{{'1888123482323' | date:'dd/MM/yy @ hh:mm:ss'}}</p>
+<p>Name in UCase   :{{'James Bond' | uppercase}}</p>
+<p>Limit:{{'Jai Prakash' | limitTo:5}}</p>
+<div>
+	<ul ng-controller="ShowElements">
+		<li ng-repeat="element in elements | limitTo:5 | orderBy:'-AN'">{{element.name}}</li>
+	</ul>
+</div>
+</body>
+</html>
